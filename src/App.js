@@ -14,7 +14,7 @@ const App = () => {
             vapidKey:
               "BH4iHjV4KWPAFPtA_EsNDALS4rnJaGu8HSeiG9lczuDq1d3_d0oL1rtq2Ir9ORHi0vzyn81G293cDufaBOxG0TI",
           });
-          console.log("token", token);
+          alert("token", token);
         }
       } catch (error) {
         console.log("eeee", error);
