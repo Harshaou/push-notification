@@ -21,18 +21,19 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+// const messaging = getMessaging();
 
-self.addEventListener("push", (event) => {
-  const data = event.data.json();
-  const options = {
-    data: data.notification.data,
-    // Customize other notification options as needed
-  };
+// self.addEventListener("push", (event) => {
+//   const data = event.data.json();
+//   const options = {
+//     data: data.notification.data,
+//     // Customize other notification options as needed
+//   };
 
-  event.waitUntil(
-    self.registration.showNotification(data.notification.title, options)
-  );
-});
+//   event.waitUntil(
+//     self.registration.showNotification(data.notification.title, options)
+//   );
+// });
 
 //write firebase-messaging-sw.js
 
