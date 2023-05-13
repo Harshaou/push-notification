@@ -3,13 +3,6 @@
 
 import { initializeApp } from "firebase/app";
 
-importScripts(
-  "https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"
-);
-importScripts(
-  "https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compat.js"
-);
-
 const firebaseConfig = {
   apiKey: "AIzaSyBJTftUiv33p0B9RmIAKAtyHE0ZQy41t8Y",
   authDomain: "push-notifications-57e07.firebaseapp.com",
