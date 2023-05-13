@@ -21,7 +21,6 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
-const messaging = getMessaging();
 
 self.addEventListener("push", (event) => {
   const data = event.data.json();
