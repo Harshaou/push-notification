@@ -1,35 +1,31 @@
-import { useEffect } from "react";
+/* eslint-disable no-undef */
+
+import React, { useEffect, useState } from "react";
 import { messaging } from "./firebase";
 import { getToken } from "firebase/messaging";
-import logo from "./logo.svg";
-import "./App.css";
 
-function App() {
-  async function requestPermission() {
-    const permission = await Notification.requestPermission();
-    try {
-      if (permission === "granted") {
-        // Generate Token
-        const token = await getToken(messaging, {
-          vapidKey:
-            "BH4iHjV4KWPAFPtA_EsNDALS4rnJaGu8HSeiG9lczuDq1d3_d0oL1rtq2Ir9ORHi0vzyn81G293cDufaBOxG0TI",
-        });
-        console.log("Token Gen", token);
-        // Send this token  to server ( db)
-      } else if (permission === "denied") {
-        alert("You denied for the notification");
-      }
-    } catch (error) {
-      console.log("erroooo", error);
-    }
-  }
-
+const App = () => {
   useEffect(() => {
-    // Req user for notification permission
-    requestPermission();
+    const handlePermissionRequest = async () => {
+      try {
+        const permission = await Notification.requestPermission();
+        if (permission === "granted") {
+          const token = await getToken(messaging, {
+            vapidKey:
+              "BH4iHjV4KWPAFPtA_EsNDALS4rnJaGu8HSeiG9lczuDq1d3_d0oL1rtq2Ir9ORHi0vzyn81G293cDufaBOxG0TI",
+          });
+          alert("token", token);
+          console.log("token", token);
+        }
+      } catch (error) {
+        console.log("eeee", error);
+      }
+    };
+
+    handlePermissionRequest();
   }, []);
 
-  return <div className="App">Hello world</div>;
-}
+  return <div>Hello world</div>;
+};
 
 export default App;
