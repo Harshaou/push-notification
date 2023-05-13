@@ -2,7 +2,6 @@
 /* eslint-disable no-undef */
 
 import { initializeApp } from "firebase/app";
-import { getMessaging } from "firebase/messaging/sw";
 
 importScripts(
   "https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"
@@ -21,7 +20,6 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
-const messaging = getMessaging();
 
 self.addEventListener("push", (event) => {
   const data = event.data.json();

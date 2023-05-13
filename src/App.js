@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { messaging } from "./firebase";
 import { getToken } from "firebase/messaging";
 
@@ -14,7 +14,6 @@ const App = () => {
             vapidKey:
               "BH4iHjV4KWPAFPtA_EsNDALS4rnJaGu8HSeiG9lczuDq1d3_d0oL1rtq2Ir9ORHi0vzyn81G293cDufaBOxG0TI",
           });
-          alert("token", token);
           console.log("token", token);
         }
       } catch (error) {
@@ -25,7 +24,7 @@ const App = () => {
     handlePermissionRequest();
   }, []);
 
-  return <div>Hello world</div>;
+  return <div>Hello new world </div>;
 };
 
 export default App;
